@@ -7,13 +7,13 @@ import graph from "../assets/graph.png";
 
 function MainDashboard(){
 
-    const [number1,setnumber1] = useState(0)
-    const [number2,setnumber2] = useState(0)
-     const [number3,setnumber3] = useState(0)
-      const [number4,setnumber4] = useState(0)
-       const [number5,setnumber5] = useState(0)
-        const [number6,setnumber6] = useState(0)
-        const [number7,setnumber7] = useState(0)
+    const [number1,setnumber1] = useState(375)
+    const [number2,setnumber2] = useState(6235)
+     const [number3,setnumber3] = useState(809)
+      const [number4,setnumber4] = useState(5590)
+       const [number5,setnumber5] = useState(245)
+        const [number6,setnumber6] = useState(95)
+        const [number7,setnumber7] = useState(6798)
 
   const genraterandomnumber = (()=>{
      const rand1 = (Math.trunc(Math.random()*1000)+1)
