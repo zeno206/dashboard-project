@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import logo from "../assets/logo.png";
 import logo2 from "../assets/logo2.png";
 import graph from "../assets/graph.png";
+import {ResponsiveContainer,LineChart,Line} from "recharts";
+import axios from "axios"
 
 
 
@@ -14,6 +16,8 @@ function MainDashboard(){
        const [number5,setnumber5] = useState(245)
         const [number6,setnumber6] = useState(95)
         const [number7,setnumber7] = useState(6798)
+        const [chart,setchart]=useState([])
+
 
   const genraterandomnumber = (()=>{
      const rand1 = (Math.trunc(Math.random()*1000)+1)
@@ -43,6 +47,16 @@ function MainDashboard(){
         clearInterval(interval);
     };
 }, []);
+
+useEffect(()=>{
+  axios.get('/api/chartdata')
+  .then((response)=>{
+    setchart(response.data)
+  })
+  .catch((error)=>{
+    console.log(error)
+  })
+},[])
 
 
     return(
@@ -140,7 +154,11 @@ function MainDashboard(){
 
                     </div>
                     <div className="l-4">
-                        <img className="graph" src={logo}/>
+                        <ResponsiveContainer width="100%" aspect={3}>
+                            <LineChart data={key}>
+                                <Line datakey={data}/>
+                            </LineChart>
+                        </ResponsiveContainer>
                     </div>
 
                 </div>
