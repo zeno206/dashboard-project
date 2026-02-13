@@ -48,15 +48,18 @@ function MainDashboard(){
     };
 }, []);
 
-useEffect(()=>{
-  axios.get('http://localhost:3000/api/cdata')
-  .then((response)=>{
-    setchart(response.data)
-  })
-  .catch((error)=>{
-    console.log(error)
-  })
-},[])
+useEffect(() => {
+    axios.get("/api")
+        .then((res) => {
+            setchart(res.data)
+        })
+        .catch((error) => { 
+            console.log("Status:", error.response?.status)
+            console.log("Data:", error.response?.data)
+            console.log("Message:", error.message)
+        })
+}, [])
+
 
 
     return(
@@ -154,7 +157,7 @@ useEffect(()=>{
 
                     </div>
                     <div className="l-4">
-                       <ResponsiveContainer width="100%" aspect={3}>
+                       <ResponsiveContainer width={"100%"} height={"100%"}>
                             <LineChart data={chart}>
                             <Line type="monotone" dataKey="salary" stroke="#8884d8" />
                        <Line type="monotone" dataKey="revenue" stroke="#82ca9d" />
