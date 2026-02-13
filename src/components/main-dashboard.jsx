@@ -49,7 +49,7 @@ function MainDashboard(){
 }, []);
 
 useEffect(()=>{
-  axios.get('/api/chartdata')
+  axios.get('http://localhost:3000/api/cdata')
   .then((response)=>{
     setchart(response.data)
   })
@@ -154,11 +154,13 @@ useEffect(()=>{
 
                     </div>
                     <div className="l-4">
-                        <ResponsiveContainer width="100%" aspect={3}>
-                            <LineChart data={key}>
-                                <Line datakey={data}/>
-                            </LineChart>
-                        </ResponsiveContainer>
+                       <ResponsiveContainer width="100%" aspect={3}>
+                            <LineChart data={chart}>
+                            <Line type="monotone" dataKey="salary" stroke="#8884d8" />
+                       <Line type="monotone" dataKey="revenue" stroke="#82ca9d" />
+                           </LineChart>
+                             </ResponsiveContainer>
+
                     </div>
 
                 </div>
