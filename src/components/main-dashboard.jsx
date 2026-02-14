@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import logo from "../assets/logo.png";
 import logo2 from "../assets/logo2.png";
 import graph from "../assets/graph.png";
 import {ResponsiveContainer,LineChart,Line} from "recharts";
@@ -16,7 +15,8 @@ function MainDashboard(){
        const [number5,setnumber5] = useState(245)
         const [number6,setnumber6] = useState(95)
         const [number7,setnumber7] = useState(6798)
-        const [chart,setchart]=useState([])
+
+    const[data,setdata] = useState([])
 
 
   const genraterandomnumber = (()=>{
@@ -48,17 +48,18 @@ function MainDashboard(){
     };
 }, []);
 
-useEffect(() => {
-    axios.get("/api")
-        .then((res) => {
-            setchart(res.data)
-        })
-        .catch((error) => { 
-            console.log("Status:", error.response?.status)
-            console.log("Data:", error.response?.data)
-            console.log("Message:", error.message)
-        })
-}, [])
+  useEffect(()=>{
+   axios.get("/api/shubham")
+   .then((response)=>{
+          setdata(response.data)})
+  .catch((error)=>{
+    console.log(error)
+  })
+  },[])
+
+
+
+
 
 
 
@@ -157,13 +158,7 @@ useEffect(() => {
 
                     </div>
                     <div className="l-4">
-                       <ResponsiveContainer width={"100%"} height={"100%"}>
-                            <LineChart data={chart}>
-                            <Line type="monotone" dataKey="salary" stroke="#8884d8" />
-                       <Line type="monotone" dataKey="revenue" stroke="#82ca9d" />
-                           </LineChart>
-                             </ResponsiveContainer>
-
+                 
                     </div>
 
                 </div>
