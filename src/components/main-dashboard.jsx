@@ -1,12 +1,40 @@
 import React, { useEffect, useState } from "react";
 import logo2 from "../assets/logo2.png";
 import graph from "../assets/graph.png";
-import {ResponsiveContainer,LineChart,Line} from "recharts";
+import {ResponsiveContainer,LineChart,Line,XAxis,} from "recharts";
+import {BarChart,Bar} from "recharts";
 import axios from "axios"
 
 
-
 function MainDashboard(){
+
+    const chartData = [
+  { month: "Sep", salary: 28000, revenue: 80000 },
+  { month: "Oct", salary: 70000, revenue: 120000 },
+  { month: "Nov", salary: 28000, revenue: 80000 },
+  { month: "Dec", salary: 70000, revenue: 120000 },
+  { month: "jan", salary: 28000, revenue: 80000 },
+  { month: "feb", salary: 70000, revenue: 120000 }
+];
+
+    const barData = [
+  { month: "Sep", salary: 28000, revenue: 80000 },
+  { month: "Oct", salary: 70000, revenue: 120000 },
+  { month: "Nov", salary: 28000, revenue: 80000 },
+  { month: "Dec", salary: 70000, revenue: 120000 },
+  { month: "jan", salary: 28000, revenue: 80000 },
+  { month: "feb", salary: 70000, revenue: 120000 }
+];
+
+    const barData2 = [
+  {  salary: 18000,},
+  {  salary: 70000,},
+  {  salary: 40000,},
+  {  salary: 62000,},
+  {  salary: 30000,},
+  {  salary: 70000,}
+];
+
 
     const [number1,setnumber1] = useState(375)
     const [number2,setnumber2] = useState(6235)
@@ -48,14 +76,7 @@ function MainDashboard(){
     };
 }, []);
 
-  useEffect(()=>{
-   axios.get("/api/shubham")
-   .then((response)=>{
-          setdata(response.data)})
-  .catch((error)=>{
-    console.log(error)
-  })
-  },[])
+ 
 
 
 
@@ -158,6 +179,18 @@ function MainDashboard(){
 
                     </div>
                     <div className="l-4">
+                        <ResponsiveContainer width= "90%"  height={200}>
+                            <LineChart data={chartData}>
+                                <XAxis 
+                                dataKey={"month"}
+                                axisLine={false}
+                                tickline={true}
+                                interval={'preserveStartEnd'}
+                                tick={{fontSize: 14}}/>
+                                <Line type="monotone" dataKey={"salary"} stroke="#83d9ff" dot={false} strokeWidth={5}/>
+                                 <Line type="monotone" dataKey={"revenue"} stroke="#7654ff" dot={false} strokeWidth={5}/>
+                            </LineChart>
+                        </ResponsiveContainer>
                  
                     </div>
 
@@ -173,8 +206,17 @@ function MainDashboard(){
                         <i class="ri-rhythm-line"></i>
                     </div>
                 </div>
-                 <div className="l-4">
-                        <img className="graph" src={logo2}/>
+                 <div className="bar-4">
+                       <ResponsiveContainer   width= "90%"  height={200}>
+                        <BarChart data={barData}>
+                            <XAxis 
+                            dataKey={"month"}
+                             axisLine={false}
+                              tick={{fontSize: 14}}/>
+                            <Bar dataKey={"salary"} fill="#83d9ff" barSize={40} stcakId="a"/>
+                            <Bar dataKey={"revenue"} fill="#7654ff" barSize={40} stcakId="a"/>
+                        </BarChart>
+                       </ResponsiveContainer>
                     </div>
 
             </div>
@@ -269,7 +311,11 @@ function MainDashboard(){
                         <h4 className="l-2a">2.597</h4>
                     </div>
                     <div className="lb-2">
-                                  <i class="ri-bar-chart-grouped-line"></i>
+                    <ResponsiveContainer   width= "90%"  height={180}>
+                        <BarChart data={barData2}>
+                            <Bar dataKey={"salary"} fill="#7654ff" barSize={20} stcakId="a"/>
+                        </BarChart>
+                       </ResponsiveContainer>
                     </div>
                     </div>
             </div>
