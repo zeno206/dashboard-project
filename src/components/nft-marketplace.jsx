@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./card";
+import Card2 from "./nftmarketplacecards";
 
 function Nftmarketplace(){
 
@@ -36,6 +37,28 @@ function Nftmarketplace(){
   }
 ];
 
+  const card2data = [
+  {
+    "id": 1,
+    "name": "Aarav Sharma",
+    "avatar": "https://randomuser.me/api/portraits/men/1.jpg",
+    "message": "Hey bro, kal milte hain project discuss karne ke liye!"
+  },
+  {
+    "id": 2,
+    "name": "Priya Verma",
+    "avatar": "https://randomuser.me/api/portraits/women/2.jpg",
+    "message": "Please documents bhej dena jab free ho."
+  },
+  {
+    "id": 3,
+    "name": "Rohan Mehta",
+    "avatar": "https://randomuser.me/api/portraits/men/3.jpg",
+    "message": "Meeting 5 baje confirm hai."
+  }
+]
+
+
     return(
     <div  className="nftmarketplace">
         <div className="nft-1">
@@ -56,6 +79,11 @@ function Nftmarketplace(){
                 return <Card image={cardsData.image} names={cardsData.name} detail={cardsData.details} btn={cardsData.buttonName}/>
             })}
             </div>
+        </div>
+        <div className="nft-3">
+        {card2data.map((card2data,id)=>{
+          <Card2 image={card2data.avatar} names={card2data.name} message={card2data.message}/>
+        })}
         </div>
 
     </div>

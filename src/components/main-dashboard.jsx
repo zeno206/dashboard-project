@@ -187,8 +187,8 @@ function MainDashboard(){
                                 tickline={true}
                                 interval={'preserveStartEnd'}
                                 tick={{fontSize: 14}}/>
-                                <Line type="monotone" dataKey={"salary"} stroke="#83d9ff" dot={false} strokeWidth={5}/>
-                                 <Line type="monotone" dataKey={"revenue"} stroke="#7654ff" dot={false} strokeWidth={5}/>
+                                <Line type="monotone" dataKey={"salary"} stroke="#83d9ff" dot={false} strokeWidth={6}/>
+                                 <Line type="monotone" dataKey={"revenue"} stroke="#7654ff" dot={false} strokeWidth={6}/>
                             </LineChart>
                         </ResponsiveContainer>
                  
@@ -213,8 +213,8 @@ function MainDashboard(){
                             dataKey={"month"}
                              axisLine={false}
                               tick={{fontSize: 14}}/>
-                            <Bar dataKey={"salary"} fill="#83d9ff" barSize={40} stcakId="a"/>
-                            <Bar dataKey={"revenue"} fill="#7654ff" barSize={40} stcakId="a"/>
+                            <Bar dataKey={"salary"} fill="#83d9ff" barSize={30} stcakId="a"/>
+                            <Bar dataKey={"revenue"} fill="#7654ff" barSize={30} stcakId="a"/>
                         </BarChart>
                        </ResponsiveContainer>
                     </div>

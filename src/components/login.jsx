@@ -32,7 +32,7 @@ function Login(){
 
 
     const [showheader,setshowheader] = useState(true)
-    const [showheader1,setshowheader1] = useState(false)
+    const [showheader1,setshowheader1] = useState(true)
     
 const navigate = useNavigate()
 
