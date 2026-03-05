@@ -125,6 +125,31 @@ function Orders() {
         <button className="orderbtn-2">Search</button>
       </div>
       <div className="ob-l3">
+        <div className="modrl-0">
+          <div className="hbar-1">
+            <h2 className="hdg-0">Product Summery</h2>
+            <h6 className="hdg-1">Show</h6>
+          </div>
+          <div className="hbar-2">
+            <select className="order-column">
+              <option value="volvo">All Column</option>
+              <option value="bmw">Single Column</option>
+              <option value="audi">Double Column</option>
+            </select>
+            <button className="orderbtn-3 ">Dispatch selected</button>
+          </div>
+        </div>
+        <div className="row-name">
+          <ul className="row-ul">
+            <li className="row-li-1">Id</li>
+            <li className="row-li-2">Date</li>
+            <li className="row-li-3">Email</li>
+            <li className="row-li-4">Country</li>
+            <li className="row-li-5">Address</li>
+            <li className="row-li-6">Payment</li>
+            <li className="row-li-7">Gender</li>
+          </ul>
+        </div>
         {orderdata.map((orderdata) => {
           return (
             <Orderlist

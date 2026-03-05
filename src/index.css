@@ -790,25 +790,28 @@ p {
 
 .orderbox {
   width: 100%;
+  height: 590px;
+  overflow-y: auto;
 }
 
 .ob-l1 {
   display: flex;
   padding: 20px 0px 20px 37px;
-  column-gap: 800px;
+  -moz-column-gap: 800px;
+  column-gap: 781px;
 }
 
 .orderbtn {
   background-color: #3b48e7;
-  padding: 8px 20px 8px 20px;
-  border-radius: 20px;
+  padding: 8px 30px 8px 30px;
+  border-radius: 7px;
   color: white;
 }
 
 .orderbtn-2 {
   background-color: #3b48e7;
   padding: 8px 30px 8px 30px;
-  border-radius: 20px;
+  border-radius: 7px;
   color: white;
 }
 
@@ -872,9 +875,12 @@ p {
 }
 
 .ob-l3 {
-  padding: 5px 0px 0px 40px;
+  padding: 5px 0px 0px 0px;
   background-color: white;
-  margin-top: 38px;
+  box-shadow: 1px 3px 9px #ccc9c9;
+  width: 97%;
+  margin: 0 auto;
+  margin-top: 41px;
 }
 
 .modrl-1 {
@@ -884,6 +890,7 @@ p {
   padding: 10px 0px 10px 0px;
   font-size: 14px;
   font-weight: 500;
+  margin-left: 20px;
 }
 
 .ordrnamel-1 {
@@ -906,4 +913,80 @@ p {
 }
 .ordrnamel-6 {
   width: 12%;
+}
+
+.hbar-1 {
+  display: flex;
+  width: 30%;
+  -moz-column-gap: 133px;
+  column-gap: 133px;
+  margin-left: 20px;
+}
+
+.hbar-2 {
+  display: flex;
+  width: 40%;
+}
+
+.modrl-0 {
+  display: flex;
+  height: 65px;
+  align-items: center;
+  column-gap: 277px;
+  border-bottom: 1px solid #cbcbcb;
+}
+
+.order-column {
+  border-radius: 10px;
+  width: 50%;
+  padding-left: 7px;
+  margin-left: 22px;
+  margin-right: 26px;
+  background-color: white;
+  border: 1px solid #bdbdbd;
+  height: 33px;
+  font-size: 13px;
+}
+
+.hdg-0 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.orderbtn-3 {
+  background-color: #3b48e7;
+  padding: 8px 25px 8px 25px;
+  border-radius: 20px;
+  color: white;
+  font-size: 13px;
+}
+
+.row-ul {
+  display: flex;
+  -moz-column-gap: 40px;
+  column-gap: 61px;
+  margin-left: 60px;
+  font-family: "Poppins", sans-serif;
+}
+
+.row-name {
+  background-color: #ececec;
+  width: 100%;
+  padding: 8px;
+}
+
+.row-li-3 {
+  margin-left: 73px;
+}
+
+.row-li-4 {
+  margin-left: 52px;
+}
+
+.row-li-5 {
+  margin-left: 52px;
+}
+
+.row-li-6 {
+  margin-left: 75px;
 }
