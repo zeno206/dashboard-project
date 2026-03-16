@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate, Navigate } from "react-router-dom";
 import Dashboardbar from "./dashboardbar";
 import MainDashboard from "./main-dashboard";
 import Nftmarketplace from "./nft-marketplace";
@@ -33,7 +33,6 @@ function Login() {
       setTimeout(() => {
         setshowheader(false);
         setshowheader1(true);
-        navigate("/dashboard");
       }, 1000);
     } else {
       alert("wrong password try again");

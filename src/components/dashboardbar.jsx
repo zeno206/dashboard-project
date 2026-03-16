@@ -10,28 +10,24 @@ function Dashboardbar() {
         </div>
         <div className="b-2">
           <nav>
-            <Link to={"/"}>
+            <Link className="nav-link" to={"/"}>
               <i class="ri-home-5-line"></i>Main Dashboard
             </Link>
             <br />
-            <Link to={"/2"}>
-              <i class="ri-shopping-cart-line"></i>Orders
-            </Link>
-            <br />
-            <Link to={"/1"}>
-              <i class="ri-store-2-line"></i>NFT Marketplace
-            </Link>
-            <br />
-            <Link to={"/3"}>
+            <Link className="nav-link" to={"/3"}>
               <i class="ri-user-fill"></i>Profile
             </Link>
             <br />
-            <Link to={"/4"}>
-              <i class="ri-lock-2-line"></i>Sign in
+            <Link className="nav-link" to={"/5"}>
+              <i class="ri-speak-ai-fill"></i>RTL Admin
             </Link>
             <br />
-            <Link to={"/5"}>
-              <i class="ri-speak-ai-fill"></i>RTL Admin
+            <Link className="nav-link" to={"/2"}>
+              <i class="ri-shopping-cart-line"></i>Orders
+            </Link>
+            <br />
+            <Link className="nav-link" to={"/1"}>
+              <i class="ri-store-2-line"></i>NFT Marketplace
             </Link>
             <br />
           </nav>

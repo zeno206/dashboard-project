@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import logo2 from "../assets/logo2.png";
 import graph from "../assets/graph.png";
-import { ResponsiveContainer, LineChart, Line, XAxis } from "recharts";
+import { ResponsiveContainer, LineChart, Line, XAxis, Tooltip } from "recharts";
 import { BarChart, Bar } from "recharts";
 import axios from "axios";
 
@@ -171,6 +171,7 @@ function MainDashboard() {
             <div className="l-4">
               <ResponsiveContainer width="90%" height={200}>
                 <LineChart data={chartData}>
+                  <Tooltip />
                   <XAxis
                     dataKey={"month"}
                     axisLine={false}
@@ -209,6 +210,7 @@ function MainDashboard() {
           <div className="bar-4">
             <ResponsiveContainer width="90%" height={200}>
               <BarChart data={barData}>
+                <Tooltip />
                 <XAxis
                   dataKey={"month"}
                   axisLine={false}
@@ -316,6 +318,7 @@ function MainDashboard() {
             <div className="lb-2">
               <ResponsiveContainer width="90%" height={180}>
                 <BarChart data={barData2}>
+                  <Tooltip />
                   <Bar
                     dataKey={"salary"}
                     fill="#7654ff"
